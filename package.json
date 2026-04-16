@@ -1,0 +1,9 @@
+{
+  "name": "flipkart-clone",
+  "version": "1.0.0",
+  "scripts": {
+    "postinstall": "cd server && npm install && cd ../client && npm install",
+    "build": "cd client && npm run build && cd ../server && npx prisma generate",
+    "start": "cd server && npm start"
+  }
+}
