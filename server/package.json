@@ -4,6 +4,7 @@
   "description": "Backend API for Flipkart Clone E-Commerce Application",
   "main": "src/index.js",
   "scripts": {
+    "build": "npx --yes prisma@latest generate && DATABASE_URL=\"file:./dev.db\" npx --yes prisma@latest db push && node prisma/seed.js",
     "start": "node src/index.js",
     "dev": "node --watch src/index.js",
     "db:migrate": "npx prisma migrate dev",
@@ -15,7 +16,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "prisma": "^6.6.0"
+    "prisma": "^6.19.3"
   },
   "prisma": {
     "seed": "node prisma/seed.js"

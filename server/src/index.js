@@ -1,6 +1,5 @@
 require('dotenv').config();
 const express = require('express');
-const path = require('path');
 const cors = require('cors');
 
 const productRoutes = require('./routes/products');
@@ -32,12 +31,6 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: 'Internal server error' });
 });
 
-// Serve frontend
-app.use(express.static(path.join(__dirname, '../../client/dist')));
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../client/dist/index.html'));
-});
 
 app.listen(PORT, () => {
   console.log(`🚀 Flipkart Clone API running on http://localhost:${PORT}`);
