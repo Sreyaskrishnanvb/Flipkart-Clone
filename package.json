@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "postinstall": "cd server && npm install && cd ../client && npm install",
-    "build": "cd client && npm run build && cd ../server && npx prisma generate",
+    "build": "cd client && npm run build && cd ../server && npx prisma generate && npx prisma db push && npm run db:seed",
     "start": "cd server && npm start"
   }
 }
